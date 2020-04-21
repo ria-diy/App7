@@ -1,0 +1,215 @@
+<!DOCTYPE html> 
+<html> 
+<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+ 
+THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+ 
+ 
+Authors in chronological order of contribution:
+Timothy Riedel
+Ria Goyal
+ 
+Further Information:
+http://diystream.cns.utexas.edu/
+Research Educator:
+Timothy Riedel
+triedel@utexas.edu
+ 
+Brief Description of Goal of Code:
+With this App 4 assignment, my goal is to take the lessons about coding I have gleaned from App Assignment 3 and apply them to a new topic I'm interested in! I hope to be able too put in an image that can resize, as well.
+ 
+Known Issues:
+None so far, as this task is basically an extension of App assignment 3. 
+-->
+	
+  <!-- Below is the description of the user's visible screen, sizing it so that it accommodates both laptop users and those of mobile devices. -->
+
+<head> 
+      <title>Hello World</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+
+<script>
+        var HeatStroke_count = 0;   	// Setting the heat stroke counter to zero before the app is run.
+        var HeatExhaustion_count = 0;   // Setting the heat exhaustion counter to zero before the app is run.
+	var HeatStrokePercent = 0;  	// Setting the heat stroke percent to zero before the app is run.
+	var HeatExhaustionPercent = 0;  // Setting the heat exhaustion percent to zero before the app is run.
+	
+	var docMod = document.lastModified;
+	alert("This file last modified  " + docMod);
+ 	console.log("This file last modified  " + docMod);
+
+// Defining the functions below to add clicks to heat stroke and heat exhaustion counters, respectively.
+	
+        function StrokeAdd(){
+            HeatStroke_count = HeatStroke_count + 1;
+
+        }
+
+        function ExhaustionAdd(){
+            HeatExhaustion_count = HeatExhaustion_count + 1;
+        }
+	
+// Defining the function below to calculate the percentages and display the results when called.
+	
+	function resultPercentage() {
+		HeatStrokePercent = (HeatStroke_count/5)*100;
+		HeatExhaustionPercent = (HeatExhaustion_count/5)*100;
+		var resultText = document.getElementById("six");
+		resultText.innerHTML = "Probability you're suffering from heat exhaustion =" + HeatExhaustionPercent + "%" + "<br> Probability you're suffering from heat stroke =" + HeatStrokePercent + "%"; 
+	}
+
+</script>
+
+<!-- Below dictates the margins of the webpage and any images in order to conform to both desktop and smartphone screens. -->
+
+<style>	
+.body {
+     margin: 0em; 
+}
+	
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+.page:target {
+    left: 0vw;
+    z-index: 1;
+}
+
+img, object{
+    max-height:auto;
+    max-width:100%;
+}
+
+</style>
+
+<body>
+<div id="header" class="w3-container w3-red">      					<!-- Color and location for the header -->
+	<h1>Heat Exhaustion or Heat Stroke?</h1>                  			<!-- Title within header -->
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Many people do not understand the difference between these two conditions,	<!-- Information and explanation on why this app is important -->
+	as they are both brought on by prolonged exposure to the sun. This confusion 
+	could be deadly, as while exhaustion just requires removal and cold remedies,
+	stroke is an extremely serious condition and must receive emergency medical
+	intervention. Fill out the questions below to understand the likelihood you
+	are suffering from heat exhaustion or heat stroke.</p>
+
+	<a href="#one" class="w3-btn w3-red w3-round"> Get Started </a>			<!-- Button's text and destination when clicked -->
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p> 	<!-- Disclaimer -->
+
+<!-- Below is the first page of my app -->
+
+<div class="page" id="one">				<!-- Identification of page #1-->
+	<div id="header" class="w3-container w3-red">	<!-- Color and location of header -->
+		<h1>Question 1</h1>			<!-- Text within header -->
+	</div>
+	
+    	<div id="content" class="w3-container">			
+        	<p>Are you currently sweating?</p>    						<!-- Text within body-->
+		<a href="#two"  onclick="ExhaustionAdd();" class="w3-btn w3-red"> Yes</a>	<!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#two"  onclick="StrokeAdd();" class="w3-btn w3-red">No</a>
+    	</div>
+		<img src="sweating.jpeg" alt="Sweating">	<!-- Image of itchy eye to reinforce question -->
+</div>
+
+<!-- Below is the second page of my app -->
+
+<div class="page" id="two">			<!-- Identification of page #2-->
+	<div class="w3-container w3-red">	<!-- Color and location of header -->
+		<h1>Question 2</h1>		<!-- Text within header -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Check your pulse. It's most likely rapid. But is it weak or strong?</p>		<!-- Text within body-->
+		<a href="#three"  onclick="ExhaustionAdd();" class="w3-btn w3-orange"> Weak</a>		<!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#three"  onclick="StrokeAdd();" class="w3-btn w3-orange">Strong</a>
+	</div>
+		<img src="pulse.jpeg" alt="Pulse">	<!-- Image of fever to reinforce question -->
+</div>	
+
+<!-- Below is the third page of my app -->
+
+<div class="page" id="three">			<!-- Identification of page #3-->
+	<div class="w3-container w3-red">	<!-- Color and location of header -->
+		<h1>Question 3</h1>		<!-- Text within header -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Check the quality of the skin on your limbs.
+		Is it hot and dry, or pale and clammy?</p>					<!-- Text within body-->
+		<a href="#four"  onclick="StrokeAdd();" class="w3-btn w3-yellow"> H/D</a>	<!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#four"  onclick="ExhaustionAdd();" class="w3-btn w3-yellow">P/C</a>
+	</div>
+		<img src="rdskin.jpeg" alt="Hot and Dry">	<!-- Image of sore throat to reinforce question -->
+</div>		
+
+<!-- Below is the fourth page of my app -->
+	
+<div class="page" id="four">			<!-- Identification of page #4-->
+	<div class="w3-container w3-red">	<!-- Color and location of header -->
+		<h1>Question 4</h1>		<!-- Text within header -->
+	</div>		
+	
+	<div id="content" class="w3-container">
+		<p>Are you excessively thirsty?</p>						<!-- Text within body-->
+		<a href="#five" onclick="ExhaustionAdd();" class="w3-btn w3-green"> Yes</a> <!-- Location when buttons clicked, action, color, text -->
+         	<a href="#five" onclick="StrokeAdd();" class="w3-btn w3-green">No</a>
+	</div>
+		<img src="thirsty.jpeg" alt="Thirsty">		<!-- Image alluding to seasonal symptoms to reinforce question -->
+</div>
+	
+
+<!-- Below is the fifth page of my app -->
+
+<div class="page" id="five">			<!-- Identification of page #5-->
+	<div class="w3-container w3-red">	<!-- Color and location of header -->
+		<h1>Question 5</h1>		<!-- Text within header -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Check your body temperature. 
+		Is it higher than 103°F (around 39°C)?</p>				<!-- Text within body-->
+		<a href="#six" onclick="StrokeAdd();" class="w3-btn w3-blue"> Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#six" onclick="ExhaustionAdd();" class="w3-btn w3-blue">No</a>
+	</div>
+		<img src="bodytemp.jpg" alt="Temperature">	<!-- Image alluding to aches to reinforce question -->
+</div>	
+
+<!-- Below is the sixth page of my app -->
+	
+<div class="page" id="six">			<!-- Identification of page #6-->
+	<div class="w3-container w3-red">	<!-- Color and location of header -->
+		<h1>RESULTS</h1>		<!-- Text within header -->
+	</div>
+	
+	<div id="content" class="w3-container">						
+		<p>Here are your results!</p>						 <!-- Text within header -->
+		<a onclick="resultPercentage();" class="w3-btn w3-red">Click here!</a>   <!-- Calling function to display results when clicked, color, text -->
+	</div>
+</div>
+	
+<!-- Below is the footer to my app -->	
+	
+<footer class="w3-bottom w3-container w3-red">     	<!-- Dictates what color and where the border of the footer is -->
+	<p>Please be safe when in the sun!</p>		<!-- Text within footer -->
+</footer>
+
+</body>  						
+</html>  						<!-- Signals the end of the body of my webpage -->
