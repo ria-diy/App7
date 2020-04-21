@@ -34,10 +34,14 @@ None so far, as this task is basically an extension of App assignment 3.
 
 
 <script>
-        var HeatStroke_count = 0;   	// Setting the heat stroke counter to zero before the app is run.
-        var HeatExhaustion_count = 0;   // Setting the heat exhaustion counter to zero before the app is run.
-	var HeatStrokePercent = 0;  	// Setting the heat stroke percent to zero before the app is run.
-	var HeatExhaustionPercent = 0;  // Setting the heat exhaustion percent to zero before the app is run.
+        var Allergy_count = 0;   	// Setting the allergy counter to zero before the app is run.
+        var Flu_count = 0;   		// Setting the flu counter to zero before the app is run.
+	var Covid_count = 0;
+	var Cold_count = 0;
+	var AllergyPercent = 0;  	// Setting the heat stroke percent to zero before the app is run.
+	var FluPercent = 0;  // Setting the heat exhaustion percent to zero before the app is run.
+	var CovidPercent = 0;
+	var ColdPercent = 0;
 	
 	var docMod = document.lastModified;
 	alert("This file last modified  " + docMod);
@@ -45,13 +49,21 @@ None so far, as this task is basically an extension of App assignment 3.
 
 // Defining the functions below to add clicks to heat stroke and heat exhaustion counters, respectively.
 	
-        function StrokeAdd(){
-            HeatStroke_count = HeatStroke_count + 1;
+        function AllergyAdd(){
+            Allergy_count = Allergy_count + 1;
 
         }
 
-        function ExhaustionAdd(){
-            HeatExhaustion_count = HeatExhaustion_count + 1;
+        function FluAdd(){
+            Flu_count = Flu_count + 1;
+        }
+	
+	function CovidAdd(){
+            Covid_count = Covid_count + 1;
+        }
+	
+	function ColdAdd(){
+            Cold_count = Cold_count + 1;
         }
 	
 // Defining the function below to calculate the percentages and display the results when called.
