@@ -51,22 +51,70 @@ I'm having a little trouble with how to display the data.
 
 // Defining the functions below to add clicks to the allergy, flu, coronavirus, and cold counters, respectively.
 	
-        function AllergyAdd(){
-            Allergy_count = Allergy_count + 1;
+        function AllergyAdd(variable){
+            switch(variable) {
+		    case 0.25: 
+			    Allergy_count = Allergy_count + 0.25
+			    break;
+		    case 0.5:
+			    Allergy_count = Allergy_count + 0.5
+			    break;
+		    case 0.75:
+			    Allergy_count = Allergy_count + 0.75
+			    break;
+		    case 1:
+			    Allergy_count = Allergy_count + 1
+			    break;
+	}
+		
 
-        }
-
-        function FluAdd(){
-            Flu_count = Flu_count + 1;
-        }
+  	function FluAdd(variable){
+            switch(variable) {
+		    case 0.25: 
+			    Flu_count = Flu_count + 0.25
+			    break;
+		    case 0.5:
+			    Flu_count = Flu_count + 0.5
+			    break;
+		    case 0.75:
+			    Flu_count = Flu_count + 0.75
+			    break;
+		    case 1:
+			    Flu_count = Flu_count + 1
+			    break;
+	}
 	
-	function CovidAdd(){
-            Covid_count = Covid_count + 1;
-        }
+	  function CovidAdd(variable){
+             switch(variable) {
+		    case 0.25: 
+			    Covid_count = Covid_count + 0.25
+			    break;
+		    case 0.5:
+			    Covid_count = Covid_count + 0.5
+			    break;
+		    case 0.75:
+			    Covid_count = Covid_count + 0.75
+			    break;
+		    case 1:
+			    Covid_count = Covid_count + 1
+			    break;
+	}
 	
-	function ColdAdd(){
-            Cold_count = Cold_count + 1;
-        }
+	  function ColdAdd(variable){
+            switch(variable) {
+		    case 0.25: 
+			    Cold_count = Cold_count + 0.25
+			    break;
+		    case 0.5:
+			    Cold_count = Cold_count + 0.5
+			    break;
+		    case 0.75:
+			    Cold_count = Cold_count + 0.75
+			    break;
+		    case 1:
+			    Cold_count = Cold_count + 1
+			    break;
+	}
 	
 // Defining the function below to calculate the percentages and display the results when called.
 	
@@ -203,44 +251,44 @@ img, object{
 
 <!-- Below is the sixth page of my app -->
 
-<div class="page" id="six">			<!-- Identification of page #5-->
+<div class="page" id="six">			<!-- Identification of page #6-->
 	<div class="w3-container w3-red">	<!-- Color and location of header -->
 		<h1>Question 6</h1>		<!-- Text within header -->
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>				<!-- Text within body-->
-		<a href="#seven" onclick="AllergyAdd(); ColdAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-blue">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#seven" onclick="AllergyAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-blue">No</a>
+		<a href="#seven" onclick="AllergyAdd(); ColdAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-purple">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#seven" onclick="AllergyAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-purple">No</a>
 	</div>
 </div>		
 	
 <!-- Below is the seventh page of my app -->
 
-<div class="page" id="seven">			<!-- Identification of page #5-->
+<div class="page" id="seven">			<!-- Identification of page #7-->
 	<div class="w3-container w3-red">	<!-- Color and location of header -->
 		<h1>Question 7</h1>		<!-- Text within header -->
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Did you, or do you, have a fever?</p>				<!-- Text within body-->
-		<a href="#eight" onclick="CovidAdd(); FluAdd(); ColdAdd();" class="w3-btn w3-blue">Yes</a>
-		<a href="#eight" onclick="ColdAdd();" class="w3-btn w3-blue">Yes, but only for a short while</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#eight" onclick="AllergyAdd();" class="w3-btn w3-blue">No</a>
+		<a href="#eight" onclick="CovidAdd(); FluAdd(); ColdAdd();" class="w3-btn w3-pink">Yes</a>
+		<a href="#eight" onclick="ColdAdd();" class="w3-btn w3-pink">Yes, but only for a short while</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#eight" onclick="AllergyAdd();" class="w3-btn w3-pink">No</a>
 	</div>
 </div>	
 	
 <!-- Below is the eighth page of my app -->
 
-<div class="page" id="eight">			<!-- Identification of page #5-->
+<div class="page" id="eight">			<!-- Identification of page #8-->
 	<div class="w3-container w3-red">	<!-- Color and location of header -->
 		<h1>Question 8</h1>		<!-- Text within header -->
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Do you feel tired and weak?</p>				<!-- Text within body-->
-		<a href="#nine" onclick="AllergyAdd(); ColdAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-blue">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#nine" onclick="CovidAdd(); AllergyAdd(); ColdAdd();" class="w3-btn w3-blue">No</a>
+		<a href="#nine" onclick="AllergyAdd(); ColdAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-flat-turquoise">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#nine" onclick="CovidAdd(); AllergyAdd(); ColdAdd();" class="w3-btn w3-flat-turquoise">No</a>
 	</div>
 </div>	
 	
@@ -253,8 +301,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Are you experiencing any headaches?</p>				<!-- Text within body-->
-		<a href="#ten" onclick="AllergyAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-blue">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#ten" onclick="CovidAdd(); AllergyAdd(); ColdAdd();" class="w3-btn w3-blue">No</a>
+		<a href="#ten" onclick="AllergyAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-red">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#ten" onclick="CovidAdd(); AllergyAdd(); ColdAdd();" class="w3-btn w3-red">No</a>
 	</div>
 </div>	
 	
@@ -267,8 +315,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Are you feeling any aches or pains?</p>				<!-- Text within body-->
-		<a href="#eleven" onclick="ColdAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-blue">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#eleven" onclick="CovidAdd(); AllergyAdd();" class="w3-btn w3-blue">No</a>
+		<a href="#eleven" onclick="ColdAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-orange">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#eleven" onclick="CovidAdd(); AllergyAdd();" class="w3-btn w3-orange">No</a>
 	</div>
 </div>	
 	
@@ -281,9 +329,9 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Have you been having diarrhea?</p>				<!-- Text within body-->
-		<a href="#twelve" onclick="CovidAdd();" class="w3-btn w3-blue">Yes (and I'm an adult)</a>  <!-- Destination when buttons clicked, action, color, text -->
-		<a href="#twelve" onclick="FluAdd();" class="w3-btn w3-blue">Yes (and I'm a child)</a>
-         	<a href="#twelve" onclick="ColdAdd(); AllergyAdd();" class="w3-btn w3-blue">No</a>
+		<a href="#twelve" onclick="CovidAdd();" class="w3-btn w3-green">Yes (and I'm an adult)</a>  <!-- Destination when buttons clicked, action, color, text -->
+		<a href="#twelve" onclick="FluAdd();" class="w3-btn w3-green">Yes (and I'm a child)</a>
+         	<a href="#twelve" onclick="ColdAdd(); AllergyAdd();" class="w3-btn w3-green">No</a>
 	</div>
 </div>	
 	
