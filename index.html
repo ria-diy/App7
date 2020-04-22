@@ -16,10 +16,12 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-With this App 4 assignment, my goal is to take the lessons about coding I have gleaned from App Assignment 3 and apply them to a new topic I'm interested in! I hope to be able too put in an image that can resize, as well.
+With this App 7 assignment, my goal is to take the lessons about coding I have gleaned from App 
+Assignment 3 and 4 and apply them to the current COVID-19 crisis! 
+I am also going to use a pie chart in order to display my data in a way laypeople can understand.
  
 Known Issues:
-None so far, as this task is basically an extension of App assignment 3. 
+I'm having a little trouble with how to display the data. 
 -->
 	
   <!-- Below is the description of the user's visible screen, sizing it so that it accommodates both laptop users and those of mobile devices. -->
@@ -47,7 +49,7 @@ None so far, as this task is basically an extension of App assignment 3.
 	alert("This file last modified  " + docMod);
  	console.log("This file last modified  " + docMod);
 
-// Defining the functions below to add clicks to heat stroke and heat exhaustion counters, respectively.
+// Defining the functions below to add clicks to the allergy, flu, coronavirus, and cold counters, respectively.
 	
         function AllergyAdd(){
             Allergy_count = Allergy_count + 1;
@@ -69,10 +71,12 @@ None so far, as this task is basically an extension of App assignment 3.
 // Defining the function below to calculate the percentages and display the results when called.
 	
 	function resultPercentage() {
-		HeatStrokePercent = (HeatStroke_count/5)*100;
-		HeatExhaustionPercent = (HeatExhaustion_count/5)*100;
-		var resultText = document.getElementById("six");
-		resultText.innerHTML = "Probability you're suffering from heat exhaustion =" + HeatExhaustionPercent + "%" + "<br> Probability you're suffering from heat stroke =" + HeatStrokePercent + "%"; 
+		AllergyPercent = (Allergy_count/11)*100;
+		FluPercent = (Flu_count/11)*100;
+		CovidPercent = (Covid_count/11)*100;
+		ColdPercent = (Cold_count/11)*100;
+		var resultText = document.getElementById("twelve");
+		resultText.innerHTML = "Probability you're suffering from allergies =" + AllergyPercent + "%" + "<br> Probability you're suffering from influenza =" + FluPercent + "%" + "<br> Probability you're suffering from COVID-19 =" + CovidPercent + "%" + "<br> Probability you're suffering from a cold =" + ColdPercent + "%"; 
 	}
 
 </script>
@@ -133,11 +137,10 @@ img, object{
 	</div>
 	
     	<div id="content" class="w3-container">			
-        	<p>Are you currently sweating?</p>    						<!-- Text within body-->
-		<a href="#two"  onclick="ExhaustionAdd();" class="w3-btn w3-red"> Yes</a>	<!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#two"  onclick="StrokeAdd();" class="w3-btn w3-red">No</a>
+        	<p>How long have you exhibited your symptoms?</p>    						<!-- Text within body-->
+		<a href="#two"  onclick="AllergyAdd(); FluAdd(); CovidAdd(); ColdAdd();" class="w3-btn w3-red">Less than 2 weeks</a>	<!-- Destination when buttons clicked, action, color, text -->
+		<a href="#two"  onclick="CovidAdd(); AllergyAdd();" class="w3-btn w3-red">More than 2 weeks</a>
     	</div>
-		<img src="sweating.jpeg" alt="Sweating">	<!-- Image of itchy eye to reinforce question -->
 </div>
 
 <!-- Below is the second page of my app -->
@@ -148,11 +151,11 @@ img, object{
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Check your pulse. It's most likely rapid. But is it weak or strong?</p>		<!-- Text within body-->
-		<a href="#three"  onclick="ExhaustionAdd();" class="w3-btn w3-orange"> Weak</a>		<!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#three"  onclick="StrokeAdd();" class="w3-btn w3-orange">Strong</a>
+		<p>Do you often cough, and if so, is it productive?</p>		<!-- Text within body-->
+		<a href="#three"  onclick="FluAdd(); CovidAdd();" class="w3-btn w3-orange">Common, dry</a>		<!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#three"  onclick="ColdAdd();" class="w3-btn w3-orange">Common, mild</a>
+		<a href="#three"  onclick="AllergyAdd();" class="w3-btn w3-orange">Rare (dry) to none</a>
 	</div>
-		<img src="pulse.jpeg" alt="Pulse">	<!-- Image of fever to reinforce question -->
 </div>	
 
 <!-- Below is the third page of my app -->
@@ -163,12 +166,10 @@ img, object{
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Check the quality of the skin on your limbs.
-		Is it hot and dry, or pale and clammy?</p>					<!-- Text within body-->
-		<a href="#four"  onclick="StrokeAdd();" class="w3-btn w3-yellow"> H/D</a>	<!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#four"  onclick="ExhaustionAdd();" class="w3-btn w3-yellow">P/C</a>
+		<p>Are you experiencing any shortness of breath?</p>					<!-- Text within body-->
+		<a href="#four"  onclick="CovidAdd();" class="w3-btn w3-yellow">Yes, sometimes</a>	<!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#four"  onclick="AllergyAdd(); ColdAdd(); FluAdd();" class="w3-btn w3-yellow">No</a>
 	</div>
-		<img src="rdskin.jpeg" alt="Hot and Dry">	<!-- Image of sore throat to reinforce question -->
 </div>		
 
 <!-- Below is the fourth page of my app -->
@@ -179,11 +180,10 @@ img, object{
 	</div>		
 	
 	<div id="content" class="w3-container">
-		<p>Are you excessively thirsty?</p>						<!-- Text within body-->
-		<a href="#five" onclick="ExhaustionAdd();" class="w3-btn w3-green"> Yes</a> <!-- Location when buttons clicked, action, color, text -->
-         	<a href="#five" onclick="StrokeAdd();" class="w3-btn w3-green">No</a>
+		<p>Are you sneezing?</p>						<!-- Text within body-->
+		<a href="#five" onclick="AllergyAdd(); ColdAdd();" class="w3-btn w3-green"> Yes</a> <!-- Location when buttons clicked, action, color, text -->
+         	<a href="#five" onclick="CovidAdd(); FluAdd();" class="w3-btn w3-green">No</a>
 	</div>
-		<img src="thirsty.jpeg" alt="Thirsty">		<!-- Image alluding to seasonal symptoms to reinforce question -->
 </div>
 	
 
@@ -195,23 +195,107 @@ img, object{
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Check your body temperature. 
-		Is it higher than 103°F (around 39°C)?</p>				<!-- Text within body-->
-		<a href="#six" onclick="StrokeAdd();" class="w3-btn w3-blue"> Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#six" onclick="ExhaustionAdd();" class="w3-btn w3-blue">No</a>
+		<p>Is your nose running or stuffy?</p>				<!-- Text within body-->
+		<a href="#six" onclick="AllergyAdd(); ColdAdd();" class="w3-btn w3-blue">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#six" onclick="CovidAdd(); FluAdd();" class="w3-btn w3-blue">No</a>
 	</div>
-		<img src="bodytemp.jpg" alt="Temperature">	<!-- Image alluding to aches to reinforce question -->
 </div>	
 
 <!-- Below is the sixth page of my app -->
+
+<div class="page" id="six">			<!-- Identification of page #5-->
+	<div class="w3-container w3-red">	<!-- Color and location of header -->
+		<h1>Question 6</h1>		<!-- Text within header -->
+	</div>
 	
-<div class="page" id="six">			<!-- Identification of page #6-->
+	<div id="content" class="w3-container">
+		<p>Do you have a sore throat?</p>				<!-- Text within body-->
+		<a href="#seven" onclick="AllergyAdd(); ColdAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-blue">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#seven" onclick="AllergyAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-blue">No</a>
+	</div>
+</div>		
+	
+<!-- Below is the seventh page of my app -->
+
+<div class="page" id="seven">			<!-- Identification of page #5-->
+	<div class="w3-container w3-red">	<!-- Color and location of header -->
+		<h1>Question 7</h1>		<!-- Text within header -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Did you, or do you, have a fever?</p>				<!-- Text within body-->
+		<a href="#eight" onclick="CovidAdd(); FluAdd(); ColdAdd();" class="w3-btn w3-blue">Yes</a>
+		<a href="#eight" onclick="ColdAdd();" class="w3-btn w3-blue">Yes, but only for a short while</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#eight" onclick="AllergyAdd();" class="w3-btn w3-blue">No</a>
+	</div>
+</div>	
+	
+<!-- Below is the eighth page of my app -->
+
+<div class="page" id="eight">			<!-- Identification of page #5-->
+	<div class="w3-container w3-red">	<!-- Color and location of header -->
+		<h1>Question 8</h1>		<!-- Text within header -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you feel tired and weak?</p>				<!-- Text within body-->
+		<a href="#nine" onclick="AllergyAdd(); ColdAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-blue">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#nine" onclick="CovidAdd(); AllergyAdd(); ColdAdd();" class="w3-btn w3-blue">No</a>
+	</div>
+</div>	
+	
+<!-- Below is the ninth page of my app -->
+
+<div class="page" id="nine">			<!-- Identification of page #5-->
+	<div class="w3-container w3-red">	<!-- Color and location of header -->
+		<h1>Question 9</h1>		<!-- Text within header -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you experiencing any headaches?</p>				<!-- Text within body-->
+		<a href="#ten" onclick="AllergyAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-blue">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#ten" onclick="CovidAdd(); AllergyAdd(); ColdAdd();" class="w3-btn w3-blue">No</a>
+	</div>
+</div>	
+	
+<!-- Below is the tenth page of my app -->
+
+<div class="page" id="ten">			<!-- Identification of page #5-->
+	<div class="w3-container w3-red">	<!-- Color and location of header -->
+		<h1>Question 10</h1>		<!-- Text within header -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you feeling any aches or pains?</p>				<!-- Text within body-->
+		<a href="#eleven" onclick="ColdAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-blue">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#eleven" onclick="CovidAdd(); AllergyAdd();" class="w3-btn w3-blue">No</a>
+	</div>
+</div>	
+	
+	<!-- Below is the eleventh page of my app -->
+
+<div class="page" id="eleven">			<!-- Identification of page #5-->
+	<div class="w3-container w3-red">	<!-- Color and location of header -->
+		<h1>Question 11</h1>		<!-- Text within header -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Have you been having diarrhea?</p>				<!-- Text within body-->
+		<a href="#twelve" onclick="CovidAdd();" class="w3-btn w3-blue">Yes (and I'm an adult)</a>  <!-- Destination when buttons clicked, action, color, text -->
+		<a href="#twelve" onclick="FluAdd();" class="w3-btn w3-blue">Yes (and I'm a child)</a>
+         	<a href="#twelve" onclick="ColdAdd(); AllergyAdd();" class="w3-btn w3-blue">No</a>
+	</div>
+</div>	
+	
+<!-- Below is the twelfth page of my app -->
+	
+<div class="page" id="twelve">			<!-- Identification of page #6-->
 	<div class="w3-container w3-red">	<!-- Color and location of header -->
 		<h1>RESULTS</h1>		<!-- Text within header -->
 	</div>
 	
 	<div id="content" class="w3-container">						
-		<p>Here are your results!</p>						 <!-- Text within header -->
+		<p>Here are your results.</p>						 <!-- Text within header -->
 		<a onclick="resultPercentage();" class="w3-btn w3-red">Click here!</a>   <!-- Calling function to display results when clicked, color, text -->
 	</div>
 </div>
@@ -219,7 +303,7 @@ img, object{
 <!-- Below is the footer to my app -->	
 	
 <footer class="w3-bottom w3-container w3-red">     	<!-- Dictates what color and where the border of the footer is -->
-	<p>Please be safe when in the sun!</p>		<!-- Text within footer -->
+	<p>Please remain safe in quarantine!</p>		<!-- Text within footer -->
 </footer>
 
 </body>  						
