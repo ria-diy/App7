@@ -186,8 +186,8 @@ img, object{
 	
     	<div id="content" class="w3-container">			
         	<p>How long have you exhibited your symptoms?</p>    						<!-- Text within body-->
-		<a href="#two"  onclick="AllergyAdd(); FluAdd(); CovidAdd(); ColdAdd();" class="w3-btn w3-red">Less than 2 weeks</a>	<!-- Destination when buttons clicked, action, color, text -->
-		<a href="#two"  onclick="CovidAdd(); AllergyAdd();" class="w3-btn w3-red">More than 2 weeks</a>
+		<a href="#two"  onclick="AllergyAdd(1); FluAdd(1); CovidAdd(1); ColdAdd(1);" class="w3-btn w3-red">Less than 2 weeks</a>	<!-- Destination when buttons clicked, action, color, text -->
+		<a href="#two"  onclick="CovidAdd(1); AllergyAdd(1);" class="w3-btn w3-red">More than 2 weeks</a>
     	</div>
 </div>
 
@@ -200,9 +200,9 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Do you often cough, and if so, is it productive?</p>		<!-- Text within body-->
-		<a href="#three"  onclick="FluAdd(); CovidAdd();" class="w3-btn w3-orange">Common, dry</a>		<!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#three"  onclick="ColdAdd();" class="w3-btn w3-orange">Common, mild</a>
-		<a href="#three"  onclick="AllergyAdd();" class="w3-btn w3-orange">Rare (dry) to none</a>
+		<a href="#three"  onclick="FluAdd(1); CovidAdd(1);" class="w3-btn w3-orange">Common, dry</a>		<!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#three"  onclick="ColdAdd(1);" class="w3-btn w3-orange">Common, mild</a>
+		<a href="#three"  onclick="AllergyAdd(1); ColdAdd(0.25); FluAdd(0.25); CovidAdd(0.25);" class="w3-btn w3-orange">Rare (dry) to none</a>
 	</div>
 </div>	
 
@@ -215,8 +215,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Are you experiencing any shortness of breath?</p>					<!-- Text within body-->
-		<a href="#four"  onclick="CovidAdd();" class="w3-btn w3-yellow">Yes, sometimes</a>	<!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#four"  onclick="AllergyAdd(); ColdAdd(); FluAdd();" class="w3-btn w3-yellow">No</a>
+		<a href="#four"  onclick="CovidAdd(1);" class="w3-btn w3-yellow">Yes, sometimes</a>	<!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#four"  onclick="AllergyAdd(1); ColdAdd(1); FluAdd(1); CovidAdd(0.5);" class="w3-btn w3-yellow">No</a>
 	</div>
 </div>		
 
@@ -229,8 +229,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Are you sneezing?</p>						<!-- Text within body-->
-		<a href="#five" onclick="AllergyAdd(); ColdAdd();" class="w3-btn w3-green"> Yes</a> <!-- Location when buttons clicked, action, color, text -->
-         	<a href="#five" onclick="CovidAdd(); FluAdd();" class="w3-btn w3-green">No</a>
+		<a href="#five" onclick="AllergyAdd(1); ColdAdd(1);" class="w3-btn w3-green"> Yes</a> <!-- Location when buttons clicked, action, color, text -->
+         	<a href="#five" onclick="CovidAdd(1); FluAdd(1); AllergyAdd(0.25); ColdAdd(0.25);" class="w3-btn w3-green">No</a>
 	</div>
 </div>
 	
@@ -244,8 +244,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Is your nose running or stuffy?</p>				<!-- Text within body-->
-		<a href="#six" onclick="AllergyAdd(); ColdAdd();" class="w3-btn w3-blue">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#six" onclick="CovidAdd(); FluAdd();" class="w3-btn w3-blue">No</a>
+		<a href="#six" onclick="AllergyAdd(1); ColdAdd(1); CovidAdd(0.25); FluAdd(0.5);" class="w3-btn w3-blue">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#six" onclick="CovidAdd(1); FluAdd(0.5);" class="w3-btn w3-blue">No</a>
 	</div>
 </div>	
 
@@ -258,8 +258,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>				<!-- Text within body-->
-		<a href="#seven" onclick="AllergyAdd(); ColdAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-purple">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#seven" onclick="AllergyAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-purple">No</a>
+		<a href="#seven" onclick="AllergyAdd(0.5); ColdAdd(1); CovidAdd(0.5); FluAdd(0.5);" class="w3-btn w3-purple">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#seven" onclick="AllergyAdd(0.5); CovidAdd(0.5); FluAdd(0.5);" class="w3-btn w3-purple">No</a>
 	</div>
 </div>		
 	
@@ -272,9 +272,9 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Did you, or do you, have a fever?</p>				<!-- Text within body-->
-		<a href="#eight" onclick="CovidAdd(); FluAdd(); ColdAdd();" class="w3-btn w3-pink">Yes</a>
-		<a href="#eight" onclick="ColdAdd();" class="w3-btn w3-pink">Yes, but only for a short while</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#eight" onclick="AllergyAdd();" class="w3-btn w3-pink">No</a>
+		<a href="#eight" onclick="CovidAdd(1); FluAdd(1); ColdAdd(0.5);" class="w3-btn w3-pink">Yes</a>
+		<a href="#eight" onclick="ColdAdd(1);" class="w3-btn w3-pink">Yes, but only for a short while</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#eight" onclick="AllergyAdd(1);" class="w3-btn w3-pink">No</a>
 	</div>
 </div>	
 	
@@ -287,8 +287,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Do you feel tired and weak?</p>				<!-- Text within body-->
-		<a href="#nine" onclick="AllergyAdd(); ColdAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-flat-turquoise">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#nine" onclick="CovidAdd(); AllergyAdd(); ColdAdd();" class="w3-btn w3-flat-turquoise">No</a>
+		<a href="#nine" onclick="AllergyAdd(0.5); ColdAdd(0.5); CovidAdd(0.5); FluAdd(1);" class="w3-btn w3-flat-turquoise">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#nine" onclick="CovidAdd(0.75); AllergyAdd(0.75); ColdAdd(0.75);" class="w3-btn w3-flat-turquoise">No</a>
 	</div>
 </div>	
 	
@@ -301,8 +301,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Are you experiencing any headaches?</p>				<!-- Text within body-->
-		<a href="#ten" onclick="AllergyAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-red">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#ten" onclick="CovidAdd(); AllergyAdd(); ColdAdd();" class="w3-btn w3-red">No</a>
+		<a href="#ten" onclick="AllergyAdd(0.5); CovidAdd(0.5); FluAdd(1); ColdAdd(0.25);" class="w3-btn w3-red">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#ten" onclick="CovidAdd(0.75); AllergyAdd(0.75); ColdAdd(1);" class="w3-btn w3-red">No</a>
 	</div>
 </div>	
 	
@@ -315,8 +315,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Are you feeling any aches or pains?</p>				<!-- Text within body-->
-		<a href="#eleven" onclick="ColdAdd(); CovidAdd(); FluAdd();" class="w3-btn w3-orange">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#eleven" onclick="CovidAdd(); AllergyAdd();" class="w3-btn w3-orange">No</a>
+		<a href="#eleven" onclick="ColdAdd(1); CovidAdd(0.5); FluAdd(1);" class="w3-btn w3-orange">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         	<a href="#eleven" onclick="CovidAdd(0.75); AllergyAdd(1);" class="w3-btn w3-orange">No</a>
 	</div>
 </div>	
 	
@@ -329,9 +329,10 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Have you been having diarrhea?</p>				<!-- Text within body-->
-		<a href="#twelve" onclick="CovidAdd();" class="w3-btn w3-green">Yes (and I'm an adult)</a>  <!-- Destination when buttons clicked, action, color, text -->
-		<a href="#twelve" onclick="FluAdd();" class="w3-btn w3-green">Yes (and I'm a child)</a>
-         	<a href="#twelve" onclick="ColdAdd(); AllergyAdd();" class="w3-btn w3-green">No</a>
+		<a href="#twelve" onclick="CovidAdd(1);" class="w3-btn w3-green">Yes (and I'm an adult)</a>  <!-- Destination when buttons clicked, action, color, text -->
+		<a href="#twelve" onclick="FluAdd(1);" class="w3-btn w3-green">Yes (and I'm a child)</a>
+         	<a href="#twelve" onclick="ColdAdd(1); AllergyAdd(1); CovidAdd(0.75);" class="w3-btn w3-green">No (and I'm an adult)</a>
+		<a href="#twelve" onclick="ColdAdd(1); AllergyAdd(1); CovidAdd(0.75); FluAdd(0.75);" class="w3-btn w3-green">No (and I'm a child)</a>
 	</div>
 </div>	
 	
