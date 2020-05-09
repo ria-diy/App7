@@ -121,29 +121,13 @@ I'm having a little trouble with how to display the data.
 	
 // Defining the function below to calculate the percentages and display the results when called.
 	
-	function AllergyPercent(){
+	function resultPercentage() {
 		AllergyPercent = (Allergy_count/11)*100;
-	}
-	
-	function FluPercent(){
 		FluPercent = (Flu_count/11)*100;
-	}
-	
-	function CovidPercent(){
 		CovidPercent = (Covid_count/11)*100;
-	}
-	
-	function ColdPercent(){
 		ColdPercent = (Cold_count/11)*100;
-	}
-	
-	function resultPercentage(){
-		AllergyPercent();
-		FluPercent();
-		CovidPercent();
-		ColdPercent();
 		var resultText = document.getElementById("twelve");
-		resultText.innerHTML = "Probability you're suffering from allergies =" + AllergyPercent() + "%" + "<br> Probability you're suffering from influenza =" + FluPercent() + "%" + "<br> Probability you're suffering from COVID-19 =" + CovidPercent() + "%" + "<br> Probability you're suffering from a cold =" + ColdPercent() + "%"; 
+		resultText.innerHTML = "Probability you're suffering from allergies =" + AllergyPercent + "%" + "<br> Probability you're suffering from influenza =" + FluPercent + "%" + "<br> Probability you're suffering from COVID-19 =" + CovidPercent + "%" + "<br> Probability you're suffering from a cold =" + ColdPercent + "%"; 
 	}
 
 </script>
