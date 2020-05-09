@@ -21,7 +21,7 @@ Assignment 3 and 4 and apply them to the current COVID-19 crisis!
 I am also going to use a pie chart in order to display my data in a way laypeople can understand.
  
 Known Issues:
-I'm having a little trouble with how to display the data. 
+I'm having trouble displaying the data in a graph format. 
 -->
 	
   <!-- Below is the description of the user's visible screen, sizing it so that it accommodates both laptop users and those of mobile devices. -->
@@ -38,19 +38,20 @@ I'm having a little trouble with how to display the data.
 <script>
         var Allergy_count = 0;   	// Setting the allergy counter to zero before the app is run.
         var Flu_count = 0;   		// Setting the flu counter to zero before the app is run.
-	var Covid_count = 0;
-	var Cold_count = 0;
-	var All_count = 0;
-	var AllergyPercent = 0;  	// Setting the heat stroke percent to zero before the app is run.
-	var FluPercent = 0;  // Setting the heat exhaustion percent to zero before the app is run.
-	var CovidPercent = 0;
-	var ColdPercent = 0;
+	var Covid_count = 0;		// Setting the COVID counter to zero before the app is run.
+	var Cold_count = 0;		// Setting the cold counter to zero before the app is run.
+	var All_count = 0;		// Setting the total counter to zero before the app is run.
+	var AllergyPercent = 0;  	// Setting the allergy percent to zero before the app is run.
+	var FluPercent = 0;  		// Setting the flu percent to zero before the app is run.
+	var CovidPercent = 0;		// Setting the COVID percent to zero before the app is run.
+	var ColdPercent = 0;		// Setting the cold percent to zero before the app is run.
 	
-	var docMod = document.lastModified;
+	var docMod = document.lastModified;			// provides an alert that dictates the last update time.
 	alert("This file last modified  " + docMod);
  	console.log("This file last modified  " + docMod);
 
-// Defining the functions below to add clicks to the allergy, flu, coronavirus, and cold counters, respectively.
+// Defining the functions below to add clicks to the total, allergy, flu, coronavirus, and cold counters, respectively.
+// The switch functions allow us to use assign different variables to the functions, increasing accuracy.
 	
        function AllAdd(){
 	All_count = Cold_count + Covid_count + Flu_count + Allergy_count;
@@ -164,11 +165,11 @@ I'm having a little trouble with how to display the data.
 
 <body>
 <div id="header" class="w3-container w3-red">      					<!-- Color and location for the header -->
-	<h1>Chances You May Have COVID-19, Seasonal Allergies, A Cold, Or The Flu</h1>                  			<!-- Title within header -->
+	<h1>Chances You May Have COVID-19, Seasonal Allergies, A Cold, Or The Flu</h1>         <!-- Title within header -->
 </div>
 	
 <div id="content" class="w3-container">
-	<p>During these troublesome times, it's important to not overburden the healthcare system.
+	<p>During these troublesome times, it's important to not overburden the healthcare system. 	<!-- Introduction -->
 	However, people also need to understand the chances that they have COVID-19 if they are
 	exhibiting symptoms of respiratory distress. This app aims to help people distinguish between
 	their chances of having COVID-19, as opposed to the chances of having seasonal allergies, 
@@ -188,9 +189,9 @@ I'm having a little trouble with how to display the data.
 	</div>
 	
     	<div id="content" class="w3-container">			
-        	<p>How long have you exhibited your symptoms?</p>    						<!-- Text within body-->
-		<a href="#two"  onclick="AllergyAdd(1); FluAdd(1); CovidAdd(1); ColdAdd(1);" class="w3-btn w3-red">Less than 2 weeks</a>	<!-- Destination when buttons clicked, action, color, text -->
-		<a href="#two"  onclick="CovidAdd(1); AllergyAdd(1);" class="w3-btn w3-red">More than 2 weeks</a>
+        	<p>How long have you exhibited your symptoms?</p>    											<!-- Text within body-->
+			<a href="#two"  onclick="AllergyAdd(1); FluAdd(1); CovidAdd(1); ColdAdd(1);" class="w3-btn w3-red">Less than 2 weeks</a>	<!-- Destination when buttons clicked, action, color, text -->
+			<a href="#two"  onclick="CovidAdd(1); AllergyAdd(1);" class="w3-btn w3-red">More than 2 weeks</a>
     	</div>
 </div>
 
@@ -202,10 +203,10 @@ I'm having a little trouble with how to display the data.
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you often cough, and if so, is it productive?</p>		<!-- Text within body-->
-		<a href="#three"  onclick="FluAdd(1); CovidAdd(1);" class="w3-btn w3-orange">Common, dry</a>		<!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#three"  onclick="ColdAdd(1);" class="w3-btn w3-orange">Common, mild</a>
-		<a href="#three"  onclick="AllergyAdd(1); ColdAdd(0.25); FluAdd(0.25); CovidAdd(0.25);" class="w3-btn w3-orange">Rare (dry) to none</a>
+		<p>Do you often cough, and if so, is it productive?</p>								<!-- Text within body-->
+			<a href="#three"  onclick="FluAdd(1); CovidAdd(1);" class="w3-btn w3-orange">Common, dry</a>		<!-- Destination when buttons clicked, action, color, text -->
+         		<a href="#three"  onclick="ColdAdd(1);" class="w3-btn w3-orange">Common, mild</a>
+			<a href="#three"  onclick="AllergyAdd(1); ColdAdd(0.25); FluAdd(0.25); CovidAdd(0.25);" class="w3-btn w3-orange">Rare (dry) to none</a>
 	</div>
 </div>	
 
@@ -217,9 +218,9 @@ I'm having a little trouble with how to display the data.
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are you experiencing any shortness of breath?</p>					<!-- Text within body-->
-		<a href="#four"  onclick="CovidAdd(1);" class="w3-btn w3-yellow">Yes, sometimes</a>	<!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#four"  onclick="AllergyAdd(1); ColdAdd(1); FluAdd(1); CovidAdd(0.5);" class="w3-btn w3-yellow">No</a>
+		<p>Are you experiencing any shortness of breath?</p>									<!-- Text within body-->
+			<a href="#four"  onclick="CovidAdd(1);" class="w3-btn w3-yellow">Yes, sometimes</a>				<!-- Destination when buttons clicked, action, color, text -->
+         		<a href="#four"  onclick="AllergyAdd(1); ColdAdd(1); FluAdd(1); CovidAdd(0.5);" class="w3-btn w3-yellow">No</a>
 	</div>
 </div>		
 
@@ -231,9 +232,9 @@ I'm having a little trouble with how to display the data.
 	</div>		
 	
 	<div id="content" class="w3-container">
-		<p>Are you sneezing?</p>						<!-- Text within body-->
-		<a href="#five" onclick="AllergyAdd(1); ColdAdd(1);" class="w3-btn w3-green"> Yes</a> <!-- Location when buttons clicked, action, color, text -->
-         	<a href="#five" onclick="CovidAdd(1); FluAdd(1); AllergyAdd(0.25); ColdAdd(0.25);" class="w3-btn w3-green">No</a>
+		<p>Are you sneezing?</p>												<!-- Text within body-->
+			<a href="#five" onclick="AllergyAdd(1); ColdAdd(1);" class="w3-btn w3-green"> Yes</a> 				<!-- Location when buttons clicked, action, color, text -->
+         		<a href="#five" onclick="CovidAdd(1); FluAdd(1); AllergyAdd(0.25); ColdAdd(0.25);" class="w3-btn w3-green">No</a>
 	</div>
 </div>
 	
@@ -246,9 +247,9 @@ I'm having a little trouble with how to display the data.
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Is your nose running or stuffy?</p>				<!-- Text within body-->
-		<a href="#six" onclick="AllergyAdd(1); ColdAdd(1); CovidAdd(0.25); FluAdd(0.5);" class="w3-btn w3-blue">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#six" onclick="CovidAdd(1); FluAdd(0.5);" class="w3-btn w3-blue">No</a>
+		<p>Is your nose running or stuffy?</p>											  <!-- Text within body-->
+			<a href="#six" onclick="AllergyAdd(1); ColdAdd(1); CovidAdd(0.25); FluAdd(0.5);" class="w3-btn w3-blue">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         		<a href="#six" onclick="CovidAdd(1); FluAdd(0.5);" class="w3-btn w3-blue">No</a>
 	</div>
 </div>	
 
@@ -260,9 +261,9 @@ I'm having a little trouble with how to display the data.
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a sore throat?</p>				<!-- Text within body-->
-		<a href="#seven" onclick="AllergyAdd(0.5); ColdAdd(1); CovidAdd(0.5); FluAdd(0.5);" class="w3-btn w3-purple">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#seven" onclick="AllergyAdd(0.5); CovidAdd(0.5); FluAdd(0.5);" class="w3-btn w3-purple">No</a>
+		<p>Do you have a sore throat?</p>												<!-- Text within body-->
+			<a href="#seven" onclick="AllergyAdd(0.5); ColdAdd(1); CovidAdd(0.5); FluAdd(0.5);" class="w3-btn w3-purple">Yes</a>    <!-- Destination when buttons clicked, action, color, text -->
+         		<a href="#seven" onclick="AllergyAdd(0.5); CovidAdd(0.5); FluAdd(0.5);" class="w3-btn w3-purple">No</a>
 	</div>
 </div>		
 	
@@ -274,10 +275,10 @@ I'm having a little trouble with how to display the data.
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Did you, or do you, have a fever?</p>				<!-- Text within body-->
-		<a href="#eight" onclick="CovidAdd(1); FluAdd(1); ColdAdd(0.5);" class="w3-btn w3-pink">Yes</a>
-		<a href="#eight" onclick="ColdAdd(1);" class="w3-btn w3-pink">Yes, but only for a short while</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#eight" onclick="AllergyAdd(1);" class="w3-btn w3-pink">No</a>
+		<p>Did you, or do you, have a fever?</p>								<!-- Text within body-->
+			<a href="#eight" onclick="CovidAdd(1); FluAdd(1); ColdAdd(0.5);" class="w3-btn w3-pink">Yes</a>
+			<a href="#eight" onclick="ColdAdd(1);" class="w3-btn w3-pink">Yes, but only for a short while</a>   <!-- Destination when buttons clicked, action, color, text -->
+         		<a href="#eight" onclick="AllergyAdd(1);" class="w3-btn w3-pink">No</a>
 	</div>
 </div>	
 	
@@ -289,9 +290,9 @@ I'm having a little trouble with how to display the data.
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you feel tired and weak?</p>				<!-- Text within body-->
-		<a href="#nine" onclick="AllergyAdd(0.5); ColdAdd(0.5); CovidAdd(0.5); FluAdd(1);" class="w3-btn w3-flat-turquoise">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#nine" onclick="CovidAdd(0.75); AllergyAdd(0.75); ColdAdd(0.75);" class="w3-btn w3-flat-turquoise">No</a>
+		<p>Do you feel tired and weak?</p>													<!-- Text within body-->
+			<a href="#nine" onclick="AllergyAdd(0.5); ColdAdd(0.5); CovidAdd(0.5); FluAdd(1);" class="w3-btn w3-flat-turquoise">Yes</a>     <!-- Destination when buttons clicked, action, color, text -->
+         		<a href="#nine" onclick="CovidAdd(0.75); AllergyAdd(0.75); ColdAdd(0.75);" class="w3-btn w3-flat-turquoise">No</a>
 	</div>
 </div>	
 	
@@ -302,10 +303,10 @@ I'm having a little trouble with how to display the data.
 		<h1>Question 9</h1>		<!-- Text within header -->
 	</div>
 	
-	<div id="content" class="w3-container">
-		<p>Are you experiencing any headaches?</p>				<!-- Text within body-->
-		<a href="#ten" onclick="AllergyAdd(0.5); CovidAdd(0.5); FluAdd(1); ColdAdd(0.25);" class="w3-btn w3-red">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#ten" onclick="CovidAdd(0.75); AllergyAdd(0.75); ColdAdd(1);" class="w3-btn w3-red">No</a>
+	<div id="content" class="w3-container">		
+		<p>Are you experiencing any headaches?</p>									   	   <!-- Text within body-->
+			<a href="#ten" onclick="AllergyAdd(0.5); CovidAdd(0.5); FluAdd(1); ColdAdd(0.25);" class="w3-btn w3-red">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         		<a href="#ten" onclick="CovidAdd(0.75); AllergyAdd(0.75); ColdAdd(1);" class="w3-btn w3-red">No</a>
 	</div>
 </div>	
 	
@@ -317,9 +318,9 @@ I'm having a little trouble with how to display the data.
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are you feeling any aches or pains?</p>				<!-- Text within body-->
-		<a href="#eleven" onclick="ColdAdd(1); CovidAdd(0.5); FluAdd(1);" class="w3-btn w3-orange">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
-         	<a href="#eleven" onclick="CovidAdd(0.75); AllergyAdd(1);" class="w3-btn w3-orange">No</a>
+		<p>Are you feeling any aches or pains?</p>								     <!-- Text within body-->
+			<a href="#eleven" onclick="ColdAdd(1); CovidAdd(0.5); FluAdd(1);" class="w3-btn w3-orange">Yes</a>   <!-- Destination when buttons clicked, action, color, text -->
+         		<a href="#eleven" onclick="CovidAdd(0.75); AllergyAdd(1);" class="w3-btn w3-orange">No</a>
 	</div>
 </div>	
 	
@@ -331,11 +332,11 @@ I'm having a little trouble with how to display the data.
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Have you been having diarrhea?</p>				<!-- Text within body-->
-		<a href="#twelve" onclick="CovidAdd(1);" class="w3-btn w3-green">Yes (and I'm an adult)</a>  <!-- Destination when buttons clicked, action, color, text -->
-		<a href="#twelve" onclick="FluAdd(1);" class="w3-btn w3-green">Yes (and I'm a child)</a>
-         	<a href="#twelve" onclick="ColdAdd(1); AllergyAdd(1); CovidAdd(0.75);" class="w3-btn w3-green">No (and I'm an adult)</a>
-		<a href="#twelve" onclick="ColdAdd(1); AllergyAdd(1); CovidAdd(0.75); FluAdd(0.75);" class="w3-btn w3-green">No (and I'm a child)</a>
+		<p>Have you been having diarrhea?</p>										<!-- Text within body-->
+			<a href="#twelve" onclick="CovidAdd(1);" class="w3-btn w3-green">Yes (and I'm an adult)</a>  		<!-- Destination when buttons clicked, action, color, text -->
+			<a href="#twelve" onclick="FluAdd(1);" class="w3-btn w3-green">Yes (and I'm a child)</a>
+         		<a href="#twelve" onclick="ColdAdd(1); AllergyAdd(1); CovidAdd(0.75);" class="w3-btn w3-green">No (and I'm an adult)</a>
+			<a href="#twelve" onclick="ColdAdd(1); AllergyAdd(1); CovidAdd(0.75); FluAdd(0.75);" class="w3-btn w3-green">No (and I'm a child)</a>
 	</div>
 </div>	
 	
@@ -347,20 +348,25 @@ I'm having a little trouble with how to display the data.
 	</div>
 	
 	<div id="content" class="w3-container">						
-		<p>Here are your results.</p>						 <!-- Text within header -->
+		<p>Here are your results. My plan was to display these results in a bar graph but I was
+		unable to figure out the coding to facilitate this. I then changed to a pie graph representation,
+		but that too is unable to work, even though I originally converted to a pie chart because I saw
+		there was more online information I could understand. While I have attempted multiple rounds of 
+		troublshooting, I have not figured out the cause. Check GitHub code for further information.</p>	<!-- Text and explanation of missing graphical respresentation-->
 		<a onclick="resultPercentage();" class="w3-btn w3-red">Click here!</a>   <!-- Calling function to display results when clicked, color, text -->
+		<br> <!-- two line breaks -->
 		<br>
-		<br>
-	<div id="piechart"></div>  <!--This creates a section seperate fom the content for a piechart -->
-	<!--The couple lines of script below are laying the foundations for the pie chart to be made. -->
+	<div id="piechart"></div>  <!-- The divs are meant to create a new section within the page upon which to place the pie chart. -->
+		
+	<!--Below serves to lay the basis for the pie chart. -->
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 	<script type="text/javascript">
-	// Load google charts
+	// Load the Google charts
 		google.charts.load('current', {'packages':['corechart']});
 		google.charts.setOnLoadCallback(drawChart);
 
-	// The below function draws the chart and sets the chart values
+	// Blow draws the chart and sets the chart values
 	function drawChart() {
   	var data = google.visualization.arrayToDataTable([
   		['Ailments', 'Chance of Disease'],
@@ -370,10 +376,10 @@ I'm having a little trouble with how to display the data.
 		['Cold', ColdPercent],	
 	]);
 
-  	//Adds a title and set the width and height of the chart
+  	//Below includes a title and sets the width and height of the chart
   	var options = {'title':'Chance of Particular Ailments', 'width':500, 'height':450};
 
-  	// Display the chart inside the <div> element with id="piechart"
+  	//Below is meant to display the chart inside the <div> piechart element
   	var chart = new 
 	google.visualization.PieChart(document.getElementById('piechart'));
   	chart.draw(data, options);
