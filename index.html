@@ -40,6 +40,7 @@ I'm having a little trouble with how to display the data.
         var Flu_count = 0;   		// Setting the flu counter to zero before the app is run.
 	var Covid_count = 0;
 	var Cold_count = 0;
+	var All_count = 0;
 	var AllergyPercent = 0;  	// Setting the heat stroke percent to zero before the app is run.
 	var FluPercent = 0;  // Setting the heat exhaustion percent to zero before the app is run.
 	var CovidPercent = 0;
@@ -119,13 +120,17 @@ I'm having a little trouble with how to display the data.
  		 }
 	}
 	
+	  function AllAdd(){
+		  All_count = Cold_count + Covid_count + Flu_count + Allergy_count;
+	  }
+	
 // Defining the function below to calculate the percentages and display the results when called.
 	
 	function resultPercentage() {
-		AllergyPercent = (Allergy_count/11)*100;
-		FluPercent = (Flu_count/11)*100;
-		CovidPercent = (Covid_count/11)*100;
-		ColdPercent = (Cold_count/11)*100;
+		AllergyPercent = (Allergy_count/All_count)*100;
+		FluPercent = (Flu_count/All_count)*100;
+		CovidPercent = (Covid_count/All_count)*100;
+		ColdPercent = (Cold_count/All_count)*100;
 		var resultText = document.getElementById("twelve");
 		resultText.innerHTML = "Probability you're suffering from allergies =" + AllergyPercent + "%" + "<br> Probability you're suffering from influenza =" + FluPercent + "%" + "<br> Probability you're suffering from COVID-19 =" + CovidPercent + "%" + "<br> Probability you're suffering from a cold =" + ColdPercent + "%"; 
 	}
@@ -154,12 +159,6 @@ I'm having a little trouble with how to display the data.
     left: 0vw;
     z-index: 1;
 }
-
-img, object{
-    max-height:auto;
-    max-width:100%;
-}
-
 </style>
 
 <body>
@@ -349,7 +348,8 @@ img, object{
 	<div id="content" class="w3-container">						
 		<p>Here are your results.</p>						 <!-- Text within header -->
 		<a onclick="resultPercentage(); google.charts.setOnLoadCallback(drawChart);" class="w3-btn w3-red">Click here!</a>   <!-- Calling function to display results when clicked, color, text -->
-
+		<br>
+		<br>
 	<div id="piechart"></div>  <!--This creates a section seperate fom the content for a piechart -->
 	<!--The couple lines of script below are laying the foundations for the pie chart to be made. -->
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -370,7 +370,7 @@ img, object{
 	]);
 
   	//Adds a title and set the width and height of the chart
-  	var options = {'title':'Chance of Particular Ailments', 'width':550, 'height':400};
+  	var options = {'title':'Chance of Particular Ailments', 'width':500, 'height':450};
 
   	// Display the chart inside the <div> element with id="piechart"
   	var chart = new google.visualization.PieChart(document.getElementById('piechart'));
