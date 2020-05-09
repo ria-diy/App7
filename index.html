@@ -52,7 +52,11 @@ I'm having a little trouble with how to display the data.
 
 // Defining the functions below to add clicks to the allergy, flu, coronavirus, and cold counters, respectively.
 	
-        function AllergyAdd(variable){
+       function AllAdd(){
+	All_count = Cold_count + Covid_count + Flu_count + Allergy_count;
+}
+	
+	function AllergyAdd(variable){
             switch(variable) {
 		    case 0.25: 
 			    Allergy_count = Allergy_count + 0.25;
@@ -120,18 +124,30 @@ I'm having a little trouble with how to display the data.
  		 }
 	}
 	
-	  function AllAdd(){
-		  All_count = Cold_count + Covid_count + Flu_count + Allergy_count;
-	  }
+	function AllergyPercent(){   // with this functions, we can calculate the percentage of allergy by dividing the count of the allergy symptoms by the total count and then multiplying by 100.0.
+		AllergyPercent = (Allergy_count/All_count)*100.000;
+	}	
+	
+	function FluPercent(){   // with this functions, we can calculate the percentage of the flu by dividing the count of the flu symptoms by the total count and then multiplying by 100.0.
+		FluPercent = (Flu_count/All_count)*100.000;
+	}
+	
+	function CovidPercent(){   // with this functions, we can calculate the percentage of COVID-19 by dividing the count of the covid symptoms by the total count and then multiplying by 100.0.
+		CovidPercent = (Covid_count/All_count)*100.000;
+	}
+		
+	function ColdPercent(){   // with this functions, we can calculate the percentage of cold by dividing the count of the cold symtom values by the total count and then multiplying by 100.0.
+	ColdPercent = (Cold_count/All_count)*100.000;
+	}
 	
 // Defining the function below to calculate the percentages and display the results when called.
 	
 	function resultPercentage() {
 		AllAdd();
-		AllergyPercent = (Allergy_count/All_count)*100;
-		FluPercent = (Flu_count/All_count)*100;
-		CovidPercent = (Covid_count/All_count)*100;
-		ColdPercent = (Cold_count/All_count)*100;
+		AllergyPercent();
+		FluPercent();
+		CovidPercent();
+		ColdPercent();
 		var resultText = document.getElementById("twelve");
 		resultText.innerHTML = "Probability you're suffering from allergies =" + AllergyPercent + "%" + "<br> Probability you're suffering from influenza =" + FluPercent + "%" + "<br> Probability you're suffering from COVID-19 =" + CovidPercent + "%" + "<br> Probability you're suffering from a cold =" + ColdPercent + "%"; 
 	}
