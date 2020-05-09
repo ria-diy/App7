@@ -364,7 +364,7 @@ I'm having a little trouble with how to display the data.
 	
 	<div id="content" class="w3-container">						
 		<p>Here are your results.</p>						 <!-- Text within header -->
-		<a onclick="ResultPercentage(); google.charts.setOnLoadCallback(drawChart());" class="w3-btn w3-red">Click here!</a>   <!-- Calling function to display results when clicked, color, text -->
+		<a onclick="ResultPercentage(); google.charts.setOnLoadCallback(drawChart);" class="w3-btn w3-red">Click here!</a>   <!-- Calling function to display results when clicked, color, text -->
 		<br>
 		<br>
 	<div id="piechart"></div>  <!--This creates a section seperate fom the content for a piechart -->
@@ -374,7 +374,7 @@ I'm having a little trouble with how to display the data.
 	<script type="text/javascript">
 	// Load google charts
 		google.charts.load('current', {'packages':['corechart']});
-		//google.charts.setOnLoadCallback(drawChart);
+		google.charts.setOnLoadCallback(drawChart);
 
 	// The below function draws the chart and sets the chart values
 	function drawChart() {
@@ -390,7 +390,8 @@ I'm having a little trouble with how to display the data.
   	var options = {'title':'Chance of Particular Ailments', 'width':500, 'height':450};
 
   	// Display the chart inside the <div> element with id="piechart"
-  	var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  	var chart = new 
+	google.visualization.PieChart(document.getElementById('piechart'));
   	chart.draw(data, options);
 }
 </script>
