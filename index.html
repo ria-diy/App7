@@ -142,15 +142,14 @@ I'm having a little trouble with how to display the data.
 	
 // Defining the function below to calculate the percentages and display the results when called.
 	
-	function ResultPercentage() {
-		AllAdd();
-		AllergyPercent();
-		FluPercent();
-		CovidPercent();
-		ColdPercent();
-		var resultText = document.getElementById("twelve");
-		resultText.innerHTML = "Probability you're suffering from allergies =" + AllergyPercent + "%" + "<br> Probability you're suffering from influenza =" + FluPercent + "%" + "<br> Probability you're suffering from COVID-19 =" + CovidPercent + "%" + "<br> Probability you're suffering from a cold =" + ColdPercent + "%"; 
-	}
+	function resultPercentage() {
+	AllergyPercent = (Allergy_count/11)*100;
+	FluPercent = (Flu_count/11)*100;
+	CovidPercent = (Covid_count/11)*100;
+	ColdPercent = (Cold_count/11)*100;
+	var resultText = document.getElementById("twelve");
+	resultText.innerHTML = "Probability you're suffering from allergies =" + AllergyPercent + "%" + "<br> Probability you're suffering from influenza =" + FluPercent + "%" + "<br> Probability you're suffering from COVID-19 =" + CovidPercent + "%" + "<br> Probability you're suffering from a cold =" + ColdPercent + "%"; 
+}
 
 </script>
 
@@ -364,7 +363,7 @@ I'm having a little trouble with how to display the data.
 	
 	<div id="content" class="w3-container">						
 		<p>Here are your results.</p>						 <!-- Text within header -->
-		<a onclick="ResultPercentage();" class="w3-btn w3-red">Click here!</a>   <!-- Calling function to display results when clicked, color, text -->
+		<a onclick="resultPercentage();" class="w3-btn w3-red">Click here!</a>   <!-- Calling function to display results when clicked, color, text -->
 		<br>
 		<br>
 	<div id="piechart"></div>  <!--This creates a section seperate fom the content for a piechart -->
