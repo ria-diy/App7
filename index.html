@@ -142,7 +142,7 @@ I'm having a little trouble with how to display the data.
 	
 // Defining the function below to calculate the percentages and display the results when called.
 	
-	function resultPercentage() {
+	function ResultPercentage() {
 		AllAdd();
 		AllergyPercent();
 		FluPercent();
@@ -364,7 +364,7 @@ I'm having a little trouble with how to display the data.
 	
 	<div id="content" class="w3-container">						
 		<p>Here are your results.</p>						 <!-- Text within header -->
-		<a onclick="resultPercentage(); google.charts.setOnLoadCallback(drawChart);" class="w3-btn w3-red">Click here!</a>   <!-- Calling function to display results when clicked, color, text -->
+		<a onclick="ResultPercentage(); google.charts.setOnLoadCallback(drawChart());" class="w3-btn w3-red">Click here!</a>   <!-- Calling function to display results when clicked, color, text -->
 		<br>
 		<br>
 	<div id="piechart"></div>  <!--This creates a section seperate fom the content for a piechart -->
