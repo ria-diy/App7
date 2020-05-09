@@ -159,10 +159,10 @@ google.charts.load('current', {'packages':['corechart']});
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
   ['Ailment', 'Percent chance'],
-  ['Allergies', AllergyPercent],
-  ['Influenza', FluPercent],
-  ['COVID-19', CovidPercent],
-  ['Cold', ColdPercent]
+  ['Allergies', AllergyPercent()],
+  ['Influenza', FluPercent()],
+  ['COVID-19', CovidPercent()],
+  ['Cold', ColdPercent()]
 ]);
 
   // Optional; add a title and set the width and height of the chart
